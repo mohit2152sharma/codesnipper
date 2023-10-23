@@ -19,7 +19,7 @@ jobs:
         run: mkdocs build
       - uses: actions/upload-pages-artifact@v2
         with:
-          path: 'docs/'
+          path: 'site/'
 
   deploy:
     needs: build_site
