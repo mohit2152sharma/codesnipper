@@ -1,5 +1,4 @@
-# codesnipper
-
+"""
 This package helps you to extract code sections from a string or a text file.
 
 For example:
@@ -22,3 +21,4 @@ y = 2
 ```
 and it will extract the programming language which is `python` in the above case.
 It works with multiple code sections as well within a file or string.
+"""
