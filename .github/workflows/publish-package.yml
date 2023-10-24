@@ -1,6 +1,6 @@
 name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 
-on: 
+on:
   release:
     types: [published, released, created]
   workflow_call:
@@ -12,7 +12,7 @@ on:
 jobs:
   # run_test:
   #   uses: ./.github/workflows/run-tests.yml
-    
+
   build:
     name: Build distribution 📦
     # needs: run_test
@@ -39,7 +39,7 @@ jobs:
       with:
         name: python-package-distributions
         path: dist/
-  
+
   publish-to-pypi:
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI

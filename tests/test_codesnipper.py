@@ -31,12 +31,12 @@ TEST_CASES = [
     """,
     # with two code sections
     """
-    hello world 
+    hello world
     ```python
     x = 1
     y = dict(1,2)
     ```
-    This is not a code section 
+    This is not a code section
     ```r
     x <- 1
     y <- 2
@@ -79,10 +79,7 @@ EXPECTED_LANGUAGE = [[None], [None], [None], [None], ["python"], ["python", "r"]
 class TestCodeSnipper:
     @pytest.mark.parametrize(
         "test_value, expected_value",
-        [
-            (test_case, result)
-            for test_case, result in zip(TEST_CASES, [0, 0, 1, 1, 1, 2])
-        ],
+        [(test_case, result) for test_case, result in zip(TEST_CASES, [0, 0, 1, 1, 1, 2])],
     )
     def test_code_sections(self, test_value, expected_value):
         # test the length of matches
@@ -91,10 +88,7 @@ class TestCodeSnipper:
 
     @pytest.mark.parametrize(
         "test_value, expected_code, expected_language",
-        [
-            (val, code, lang)
-            for val, code, lang in zip(TEST_CASES, EXPECTED_CODE, EXPECTED_LANGUAGE)
-        ],
+        [(val, code, lang) for val, code, lang in zip(TEST_CASES, EXPECTED_CODE, EXPECTED_LANGUAGE)],
     )
     def test_parse_code_sections(self, test_value, expected_code, expected_language):
         snipper = CodeSnipper(test_value)
