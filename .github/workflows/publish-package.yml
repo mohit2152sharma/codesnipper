@@ -3,6 +3,7 @@ name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 on: 
   release:
     types: [published, released, created]
+  workflow_call:
 
 
 jobs:
