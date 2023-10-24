@@ -86,7 +86,7 @@ jobs:
   comment_on_branch:
     runs-on: ubuntu-latest
     needs:
-      - release
+      - publish_to_pypi
     steps:
       - uses: actions-ecosystem/action-create-comment@v1
         if: ${{ needs.release.outputs.semver != null }}
