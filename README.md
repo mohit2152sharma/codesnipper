@@ -1,3 +1,6 @@
+[![PyPI version](https://badge.fury.io/py/code-snipper.svg)](https://badge.fury.io/py/code-snipper)
+
+
 # codesnipper
 
 This package helps you to extract code sections from a string or a text file.
