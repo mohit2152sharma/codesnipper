@@ -25,4 +25,4 @@ packages = ["codesnipper"]
 
 [tool.setuptools_scm]
 # write_to="codesnipper/_version.py"
-# version_scheme="post-release"
+version_scheme={tag}
