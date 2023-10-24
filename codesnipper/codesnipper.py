@@ -30,25 +30,19 @@ class CodeSnipper:
     """
 
     @validate_call
-    def __init__(
-        self, text: Union[str, None] = None, file_path: Union[str, None] = None
-    ):
+    def __init__(self, text: Union[str, None] = None, file_path: Union[str, None] = None):
         self.text = text
         self.file_path = file_path
 
         if self.text is None:
             if self.file_path is not None:
-                with open(self.file_path, "r") as file:
+                with open(self.file_path) as file:
                     self.text = file.read()
             else:
-                raise ValueError(
-                    "both `text` and `file_path` cannot be `None`. At least one is required"
-                )
+                raise ValueError("both `text` and `file_path` cannot be `None`. At least one is required")
         else:
             if self.file_path is not None:
-                raise ValueError(
-                    "both text and file_path are provided. Only one is required"
-                )
+                raise ValueError("both text and file_path are provided. Only one is required")
 
     def _code_sections(self, pattern: str = "(?<=```)(.*?)(?=```)") -> List[Any]:
         matches = re.findall(pattern, self.text, flags=re.S)  # type: ignore

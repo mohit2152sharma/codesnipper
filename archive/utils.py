@@ -19,7 +19,5 @@ def validate_type(value: Any, *args) -> Any:
         else:
             check = value_type == arg
         type_checks.append(check)
-    assert any(
-        type_checks
-    ), f"{value} has incorrect type {value_type}. It should be one of {args} type."
+    assert any(type_checks), f"{value} has incorrect type {value_type}. It should be one of {args} type."
     return value

@@ -1,12 +1,12 @@
 name: Run pytests
-on: 
+on:
   push:
-    branches: 
+    branches:
       - "*"
   workflow_call:
 
 jobs:
-  
+
   build:
     name: Running pytests
     runs-on: ubuntu-latest
@@ -27,4 +27,3 @@ jobs:
           pip install -r requirements.txt
       - name: Run tests
         run: pytest --ignore archive
-        

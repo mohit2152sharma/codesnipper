@@ -60,7 +60,7 @@ jobs:
       #     tag_name: ${{ steps.bump-semver.outputs.new_version }}
       #     release_name: ${{ steps.bump-semver.outputs.new_version }}
       #     body: ${{ steps.regex-match.outputs.group1 }}
-      # - uses: 
+      # - uses:
       # - uses: actions-ecosystem/action-create-comment@v1
       #   if: ${{ steps.bump-semver.outputs.new_version != null }}
       #   with:
@@ -95,4 +95,3 @@ jobs:
           number: ${{ needs.release.outputs.prnumber }}
           body: |
             The new version [${{ needs.release.outputs.semver }}](https://github.com/${{ github.repository }}/releases/tag/${{ needs.release.outputs.semver }}) has been released :tada:
-
