@@ -24,5 +24,5 @@ dynamic = ["version"]
 packages = ["codesnipper"]
 
 [tool.setuptools_scm]
-write_to="_version.py"
-version_scheme="post-release"
+# write_to="codesnipper/_version.py"
+# version_scheme="post-release"
