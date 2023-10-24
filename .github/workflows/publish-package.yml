@@ -96,9 +96,8 @@ jobs:
       # sigstore-produced signatures and certificates.
       run: |
         semver=${{ inputs.semver }}
-        if [[ -n $semver ]]; then tag=$semver else tag=$(git describe --tags --abbrev=0); fi
+        if [[ -n $semver ]]; then tag=$semver else tag=${{ github.ref_name }}; fi
         gh release upload $tag dist/** --repo '${{ github.repository }}'
-
   publish-to-testpypi:
     name: Publish Python 🐍 distribution 📦 to TestPyPI
     needs:
