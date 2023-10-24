@@ -18,7 +18,7 @@ classifiers = [
 dependencies = [
   "pydantic"
 ]
-version = ["dynamic"]
+dynamic = ["version"]
 
 [tool.setuptools]
 packages = ["codesnipper"]
