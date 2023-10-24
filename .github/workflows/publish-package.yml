@@ -1,14 +1,16 @@
 name: Publish Python 🐍 distribution 📦 to PyPI and TestPyPI
 
 on: 
-  push:
-    branches: 
-      - main
+  release:
+    types: [published]
+  # push:
+  #   branches: 
+  #     - main
 
 
 jobs:
-  run_test:
-    uses: ./.github/workflows/run-tests.yml
+  # run_test:
+  #   uses: ./.github/workflows/run-tests.yml
     
   build:
     name: Build distribution 📦
@@ -34,8 +36,9 @@ jobs:
       with:
         name: python-package-distributions
         path: dist/
-
+  
   publish-to-pypi:
+    needs: publish-to-testpypi
     name: >-
       Publish Python 🐍 distribution 📦 to PyPI
     if: startsWith(github.ref, 'refs/tags/')  # only publish to PyPI on tag pushes
