@@ -7,9 +7,12 @@ on:
 
 
 jobs:
-
+  run_test:
+    uses: ./run-tests.yml 
+    
   build:
     name: Build distribution 📦
+    needs: run_test
     runs-on: ubuntu-latest
 
     steps:

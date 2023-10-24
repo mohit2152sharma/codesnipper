@@ -1,7 +1,9 @@
+name: Run pytests
 on: 
   push:
     branches: 
       - "*"
+  workflow_call:
 
 jobs:
   
