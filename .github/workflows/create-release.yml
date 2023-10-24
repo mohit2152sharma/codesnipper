@@ -70,6 +70,10 @@ jobs:
 
   publish_to_pypi:
     uses: ./.github/workflows/publish-package.yml
+    needs:
+      - release
 
   publish_site:
     uses: ./.github/workflows/publish-site.yml
+    needs:
+      - release
