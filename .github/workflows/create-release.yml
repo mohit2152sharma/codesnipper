@@ -8,6 +8,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    outputs:
+      semver: ${{ steps.bump-semver.outputs.new_version }}
     steps:
       - uses: actions/checkout@v2
 
@@ -70,6 +72,8 @@ jobs:
 
   publish_to_pypi:
     uses: ./.github/workflows/publish-package.yml
+    with:
+      semver: ${{ needs.release.outputs.semver }}
     needs:
       - release
 
