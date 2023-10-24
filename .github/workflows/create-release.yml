@@ -65,3 +65,11 @@ jobs:
           number: ${{ steps.get-merged-pull-request.outputs.number }}
           body: |
             The new version [${{ steps.bump-semver.outputs.new_version }}](https://github.com/${{ github.repository }}/releases/tag/${{ steps.bump-semver.outputs.new_version }}) has been released :tada:
+
+
+
+  publish_to_pypi:
+    uses: ./.github/workflows/publish-package.yml
+
+  publish_site:
+    uses: ./.github/workflows/publish-site.yml
