@@ -21,16 +21,19 @@ class Code:
 
 
 class CodeSnipper:
-    """Reads for code snippets within a text. A section is considered a code snippet
-    if it's text is enclosed in triple backticks.
-
-    Attributes:
-        text: text to check code in
-        file_path: filepath from where to read the text
-    """
-
     @validate_call
     def __init__(self, text: Union[str, None] = None, file_path: Union[str, None] = None):
+        """Reads for code snippets within a text. A section is considered a code snippet if
+        it's text is enclosed in triple backticks.
+
+        Args:
+            text: text to check code in
+            file_path: filepath from where to read the text
+
+        Raises:
+            ValueError: If both `text` and `file_path` are provided
+            ValueError: If none of `text` and `file_path` are provided
+        """
         self.text = text
         self.file_path = file_path
 
